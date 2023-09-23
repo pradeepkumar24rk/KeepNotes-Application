@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Cell1TableViewCell" customModule="Week4Assessment" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="Cell1TableViewCell" customModule="Week4Assessment" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="426" height="112"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UsF-9R-6nA">
+                    <rect key="frame" x="23" y="14" width="380" height="84"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ellipse 1" translatesAutoresizingMaskIntoConstraints="NO" id="TNU-Rr-GZH">
+                            <rect key="frame" x="22" y="21" width="34" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="34" id="YNm-v3-mI1"/>
+                            </constraints>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="CqR-Bz-SPw">
+                            <rect key="frame" x="71" y="14" width="302" height="59"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLE-uP-FA7">
+                                    <rect key="frame" x="0.0" y="0.0" width="302" height="27"/>
+                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPB-dF-Lqp">
+                                    <rect key="frame" x="0.0" y="32" width="302" height="27"/>
+                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                    <color key="textColor" red="0.45490196078431372" green="0.45490196078431372" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="JLE-uP-FA7" secondAttribute="trailing" id="9Kl-NG-NT3"/>
+                                <constraint firstItem="JLE-uP-FA7" firstAttribute="top" secondItem="CqR-Bz-SPw" secondAttribute="top" id="MPf-tA-9Ea"/>
+                                <constraint firstAttribute="bottom" secondItem="aPB-dF-Lqp" secondAttribute="bottom" id="Uhr-lm-2fa"/>
+                                <constraint firstAttribute="trailing" secondItem="aPB-dF-Lqp" secondAttribute="trailing" id="eRw-dN-54T"/>
+                                <constraint firstItem="JLE-uP-FA7" firstAttribute="leading" secondItem="CqR-Bz-SPw" secondAttribute="leading" id="hnZ-Xw-i69"/>
+                                <constraint firstItem="aPB-dF-Lqp" firstAttribute="leading" secondItem="CqR-Bz-SPw" secondAttribute="leading" id="vyn-9f-iC7"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="CqR-Bz-SPw" secondAttribute="bottom" constant="11" id="ABf-yh-kIz"/>
+                        <constraint firstAttribute="trailing" secondItem="CqR-Bz-SPw" secondAttribute="trailing" constant="7" id="IhN-Ts-9TB"/>
+                        <constraint firstItem="TNU-Rr-GZH" firstAttribute="top" secondItem="UsF-9R-6nA" secondAttribute="top" constant="21" id="Kn3-p4-CCu"/>
+                        <constraint firstItem="CqR-Bz-SPw" firstAttribute="leading" secondItem="TNU-Rr-GZH" secondAttribute="trailing" constant="15" id="SZj-e0-z7C"/>
+                        <constraint firstItem="TNU-Rr-GZH" firstAttribute="leading" secondItem="UsF-9R-6nA" secondAttribute="leading" constant="22" id="lQh-L6-uK0"/>
+                        <constraint firstAttribute="bottom" secondItem="TNU-Rr-GZH" secondAttribute="bottom" constant="19" id="m9u-sD-xpT"/>
+                        <constraint firstItem="CqR-Bz-SPw" firstAttribute="top" secondItem="UsF-9R-6nA" secondAttribute="top" constant="14" id="sRj-FJ-HQl"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="UsF-9R-6nA" secondAttribute="trailing" constant="23" id="JXz-BV-1Nh"/>
+                <constraint firstAttribute="bottom" secondItem="UsF-9R-6nA" secondAttribute="bottom" constant="14" id="Ysj-Ny-1OC"/>
+                <constraint firstItem="UsF-9R-6nA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="14" id="inm-A3-m5N"/>
+                <constraint firstItem="UsF-9R-6nA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="23" id="qD1-4C-N1x"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="check" destination="TNU-Rr-GZH" id="7PZ-Du-jFA"/>
+                <outlet property="taskDesc" destination="aPB-dF-Lqp" id="jYY-3T-6Qd"/>
+                <outlet property="taskTitle" destination="JLE-uP-FA7" id="bGp-dn-N8M"/>
+                <outlet property="totalView" destination="UsF-9R-6nA" id="4jW-Xc-8eO"/>
+            </connections>
+            <point key="canvasLocation" x="146.56488549618319" y="-200"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Ellipse 1" width="36" height="37"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
