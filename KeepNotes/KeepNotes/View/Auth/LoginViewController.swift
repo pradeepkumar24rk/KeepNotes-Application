@@ -26,6 +26,7 @@ class LoginViewController: UIViewController {
     @IBAction func login(_ sender: Any) {
         if LoginViewModel.check(email.text!, password.text!){
             let vc = UIStoryboard(name: "Main2", bundle: nil).instantiateViewController(withIdentifier: "ListViewController") as! ListViewController
+            vc.setEmailAndFindIndex(email.text ?? "")
             self.navigationController?.pushViewController(vc, animated: true)
         }
         else{

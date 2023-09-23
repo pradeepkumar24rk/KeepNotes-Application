@@ -13,4 +13,13 @@ var taskCompleted = [Task]()
 
 let sectionNameArray = ["ToDo", "Completed"]
 
-var userData = [UserDetailStruct]()
+//var userData = [UserDetailStruct]()
+var userData: [UserDetailStruct] = [
+    UserDetailStruct(fullName: "hell", email: "hello@gmail.com", password: "Hello@123",
+        taskAssigned: [
+        Task(Title: "hello",Desc: "good"),
+        Task(Title: "hello",Desc: "good"),
+        Task(Title: "hello",Desc: "good")
+        ]),
+
+]
