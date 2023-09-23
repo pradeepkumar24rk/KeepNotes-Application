@@ -12,9 +12,14 @@ class ListViewController: UIViewController {
     @IBOutlet weak var taskCount: UILabel!
     @IBOutlet weak var listTableView: UITableView!
     
+    var email = String()
+    let index = userData.firstIndex { data in
+        data.email == email
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "MyTask"
         listTableView.register(UINib(nibName: "Cell1TableViewCell", bundle: nil), forCellReuseIdentifier: "cell1")
         listTableView.register(UINib(nibName: "Cell2TableViewCell", bundle: nil), forCellReuseIdentifier: "cell2")
         listTableView.register(UINib(nibName: "SectionTableViewHeader", bundle: nil), forCellReuseIdentifier: "header")
@@ -26,7 +31,7 @@ class ListViewController: UIViewController {
     }
     
     @IBAction func addTaskBtn(_ sender: Any) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddTaskViewController") as! AddTaskViewController
+        let vc = UIStoryboard(name: "Main2", bundle: nil).instantiateViewController(withIdentifier: "AddTaskViewController") as! AddTaskViewController
         vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -55,10 +60,6 @@ extension ListViewController: UITableViewDataSource {
                     taskCompleted.isEmpty ? nil : sections.update(sectionNameArray[section])
                 }
         return sections
-//        if section == 0 {
-//            return taskAssigned.isEmpty ? nil : SectionTableView.sectionHeader(sectionNameArray[section])
-//        }
-//        return taskCompleted.isEmpty ? nil : SectionTableView.sectionHeader(sectionNameArray[section])
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {

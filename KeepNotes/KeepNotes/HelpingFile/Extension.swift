@@ -17,3 +17,15 @@ extension UIView {
         self.layer.shadowColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.16).cgColor
     }
 }
+
+extension UIButton {
+    func designButton() {
+        self.layer.cornerRadius = 10
+    }
+}
+
+extension UITextField {
+    func designTextField() {
+        self.layer.cornerRadius = 10
+    }
+}

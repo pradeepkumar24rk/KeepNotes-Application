@@ -10,16 +10,16 @@ import Foundation
 class LoginViewModel{
     static var message = ""
     
-    static func check(_ signUpData: UserDetailStruct,
-               _ email: String,
-               _ password: String
-    ) -> Bool{
-        if signUpData.email != email{
+    static func check(_ email: String, _ password: String) -> Bool{
+        if let index = userData.firstIndex(where: { data in
+            data.email == email
+        }){
+            if !(userData[index].password == password) {
+                message = "Password is wrong"
+                return false
+            }
+        } else {
             message = "Email is Wrong"
-            return false
-        }
-        else if signUpData.password != password{
-            message = "Password is wrong"
             return false
         }
         return true

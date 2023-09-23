@@ -12,3 +12,5 @@ var taskAssigned = [Task]()
 var taskCompleted = [Task]()
 
 let sectionNameArray = ["ToDo", "Completed"]
+
+var userData = [UserDetailStruct]()

@@ -7,16 +7,6 @@
 
 import UIKit
 
-struct UserDetailStruct{
-    var fullName: String
-    var email: String
-    var password: String
-}
-
-protocol PassData{
-    func passData(_ Into:UserDetailStruct)
-}
-
 class SignUpViewController: UIViewController {
 
     @IBOutlet weak var fullName: UITextField!
@@ -24,27 +14,20 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var summit: UIButton!
     
-    var delegate:PassData?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        fullName.layer.cornerRadius = 20
-        fullName.layer.masksToBounds = true
-        email.layer.cornerRadius = 20
-        email.layer.masksToBounds = true
-        password.layer.cornerRadius = 20
-        password.layer.masksToBounds = true
-        summit.layer.cornerRadius = 20
-        summit.layer.masksToBounds = true
-
+        fullName.designTextField()
+        email.designTextField()
+        password.designTextField()
+        summit.designButton()
         self.title="SignUp"
     }
     
     @IBAction func submit(_ sender: Any) {
-        let userDetailStruct = UserDetailStruct(fullName: fullName.text!, email: email.text!, password: password.text!)
-        if SignUpViewModel.signUpValidation(userDetailStruct){
+        let userDetail = UserDetailStruct(fullName: fullName.text!, email: email.text!, password: password.text!)
+        if SignUpViewModel.signUpValidation(userDetail){
 //            print("ok")
-            delegate?.passData(userDetailStruct)
+            userData.append(userDetail)
         }
         else{
             let alert:UIAlertController=UIAlertController(

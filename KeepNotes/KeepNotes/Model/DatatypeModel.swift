@@ -11,3 +11,11 @@ struct Task {
     var Title = String()
     var Desc = String()
 }
+
+struct UserDetailStruct{
+    var fullName: String
+    var email: String
+    var password: String
+    var taskAssigned = [Task]()
+    var taskCompleted = [Task]()
+}

@@ -20,6 +20,7 @@ class AddTaskViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "New task"
         taskDesc.layer.cornerRadius = 4
     }
 
