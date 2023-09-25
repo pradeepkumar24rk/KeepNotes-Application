@@ -124,6 +124,7 @@ extension ListViewController: PassListDataDelegate {
     func passData(_ Info: Task) {
         userData[index].taskAssigned.append(Info)
         taskCount.text = "Task: \(userData[index].taskAssigned.count+userData[index].taskCompleted.count)"
+        listTableView.isHidden = false
         listTableView.reloadData()
     }
 }
