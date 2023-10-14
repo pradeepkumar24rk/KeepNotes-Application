@@ -1,29 +1,40 @@
 //
 //  SignUpViewModel.swift
-//  weeklyassessment
+//  Week4Assessment
 //
-//  Created by PraDeePKuMaR RaJaRaM on 13/09/23.
+//  Created by PraDeePKuMaR RaJaRaM on 13/10/23.
 //
 
-import Foundation
-
-class SignUpViewModel{
+class SignUpViewModel {
     
-    static var message = ""
+    let userDefaults = UserDefaultsManager.shared
+    let lastUser = UserDefaultsManager.shared.users.count - 1
+    var message = String()
     
-    static func signUpValidation(_ userDetail:UserDetailStruct) -> Bool{
-        if !EmailValidation.isValidEmail(userDetail.email){
-            message = "EmailId is InValid"
+    func signUpValidation(check data: ToDoModel) -> Bool {
+        if !isRequiredFieldFilled(check: data) {
+            message = "Please fill the Required field"
+            return false
+        } else if !TDHelper.shared.isValidEmail(check: data.emailId) {
+            message = "Please Enter the valid Email"
+            return false
+        } else if !TDHelper.shared.isValidPassword(check: data.password) {
+            message = "Please Enter the valid Password.\nPassword should have 6 character length, 1 special character, 1 number and 1 capital letter"
             return false
         }
-        else if !PasswordValidation.isValidPassword(userDetail.password){
-            message = "PassWord is weak"
-            return false
-        }
-        else if !FullNameValidation.isValidFullName(userDetail.fullName){
-            message = "FullName is Invalid"
+        message = "User is created successfully"
+        return true
+    }
+    
+    func isRequiredFieldFilled(check data: ToDoModel) -> Bool {
+        if ( (data.emailId == "") || (data.password == "") ){
             return false
         }
         return true
     }
+    
+    func addNewUser(newUser: ToDoModel) {
+       userDefaults.users.append(newUser)
+    }
 }
+

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PassListDataDelegate{
-    func passData(_ Info:Task)
+    func passData(_ Info: Task)
 }
 
 class AddTaskViewController: UIViewController {
@@ -20,7 +20,6 @@ class AddTaskViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "New task"
         taskDesc.layer.cornerRadius = 4
     }
 
@@ -29,7 +28,7 @@ class AddTaskViewController: UIViewController {
     }
     
     @IBAction func saveBtn(_ sender: Any) {
-        if Validation.validation(taskTitle.text ?? "") {
+        if AddTaskViewModel.tileValidation(taskTitle.text ?? "") {
             delegate?.passData(Task(Title: taskTitle.text ?? "",Desc:taskDesc.text ?? ""))
             self.navigationController?.popViewController(animated: true)
         } else {

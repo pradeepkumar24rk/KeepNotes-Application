@@ -8,10 +8,10 @@
 import UIKit
 
 protocol UpdatedDataDelegate{
-    func updated(_ info: UITableViewCell)
+    func updated(_ info: UICollectionViewCell)
 }
 
-class Cell1TableViewCell: UITableViewCell {
+class Cell1CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var taskTitle: UILabel!
     @IBOutlet weak var taskDesc: UILabel!
     @IBOutlet weak var totalView: UIView!
@@ -32,8 +32,9 @@ class Cell1TableViewCell: UITableViewCell {
     }
 
     
-    func update(_ data: Task) {
+    func update(_ data: Task, statusImage: UIImage) {
         taskTitle.text = data.Title
         taskDesc.text = data.Desc
+        check.image = statusImage
     }
 }
