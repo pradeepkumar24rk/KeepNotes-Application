@@ -11,8 +11,6 @@
 		8308F8BF2ADAB8FE00C246CA /* Cell1CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8308F8BD2ADAB8FE00C246CA /* Cell1CollectionViewCell.swift */; };
 		8308F8C22ADAB92400C246CA /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8308F8C02ADAB92400C246CA /* AddTaskViewController.swift */; };
 		8308F8C32ADAB92400C246CA /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8308F8C12ADAB92400C246CA /* ListViewController.swift */; };
-		8308F8C72ADAB94E00C246CA /* TDHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8308F8C52ADAB94E00C246CA /* TDHelper.swift */; };
-		8308F8C82ADAB94E00C246CA /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8308F8C62ADAB94E00C246CA /* Extension.swift */; };
 		8308F8CE2ADAB96400C246CA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8308F8CA2ADAB96400C246CA /* LoginViewModel.swift */; };
 		8308F8CF2ADAB96400C246CA /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8308F8CB2ADAB96400C246CA /* SignUpViewModel.swift */; };
 		8308F8D02ADAB96400C246CA /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8308F8CC2ADAB96400C246CA /* AddTaskViewModel.swift */; };
@@ -38,8 +36,6 @@
 		8308F8BD2ADAB8FE00C246CA /* Cell1CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell1CollectionViewCell.swift; sourceTree = "<group>"; };
 		8308F8C02ADAB92400C246CA /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		8308F8C12ADAB92400C246CA /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		8308F8C52ADAB94E00C246CA /* TDHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDHelper.swift; sourceTree = "<group>"; };
-		8308F8C62ADAB94E00C246CA /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		8308F8CA2ADAB96400C246CA /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8308F8CB2ADAB96400C246CA /* SignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		8308F8CC2ADAB96400C246CA /* AddTaskViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
@@ -80,16 +76,6 @@
 				8308F8BD2ADAB8FE00C246CA /* Cell1CollectionViewCell.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		8308F8C42ADAB94E00C246CA /* HelpingFile */ = {
-			isa = PBXGroup;
-			children = (
-				8308F8C52ADAB94E00C246CA /* TDHelper.swift */,
-				8308F8C62ADAB94E00C246CA /* Extension.swift */,
-			);
-			name = HelpingFile;
-			path = ../../../week4assessment/Week4Assessment/Week4Assessment/HelpingFile;
 			sourceTree = "<group>";
 		};
 		8308F8C92ADAB96400C246CA /* ViewModel */ = {
@@ -143,7 +129,6 @@
 				8308F8DD2ADAB9F400C246CA /* Model */,
 				8308F8C92ADAB96400C246CA /* ViewModel */,
 				83581E7B2ABEF98F0048C4F7 /* View */,
-				8308F8C42ADAB94E00C246CA /* HelpingFile */,
 				8308F8D22ADAB98200C246CA /* Manager */,
 				83581E522ABED2B90048C4F7 /* AppDelegate.swift */,
 				83581E542ABED2B90048C4F7 /* SceneDelegate.swift */,
@@ -268,7 +253,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				83581E8E2ABEF98F0048C4F7 /* LoginViewController.swift in Sources */,
-				8308F8C72ADAB94E00C246CA /* TDHelper.swift in Sources */,
 				8308F8BF2ADAB8FE00C246CA /* Cell1CollectionViewCell.swift in Sources */,
 				83581E962ABEF98F0048C4F7 /* HeaderCollectionReusableView.swift in Sources */,
 				8308F8E02ADAB9F400C246CA /* TaskModel.swift in Sources */,
@@ -277,7 +261,6 @@
 				8308F8CF2ADAB96400C246CA /* SignUpViewModel.swift in Sources */,
 				8308F8C32ADAB92400C246CA /* ListViewController.swift in Sources */,
 				8308F8D02ADAB96400C246CA /* AddTaskViewModel.swift in Sources */,
-				8308F8C82ADAB94E00C246CA /* Extension.swift in Sources */,
 				8308F8D62ADAB98200C246CA /* AlertControllerManager.swift in Sources */,
 				83581E8C2ABEF98F0048C4F7 /* SignUpViewController.swift in Sources */,
 				83581E552ABED2B90048C4F7 /* SceneDelegate.swift in Sources */,
