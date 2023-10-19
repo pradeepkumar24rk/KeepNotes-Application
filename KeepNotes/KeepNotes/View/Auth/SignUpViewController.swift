@@ -1,8 +1,8 @@
 //
 //  SignUpViewController.swift
-//  weeklyassessment
+//  Week4Assessment
 //
-//  Created by PraDeePKuMaR RaJaRaM on 13/09/23.
+//  Created by PraDeePKuMaR RaJaRaM on 13/10/23.
 //
 
 import UIKit
@@ -22,6 +22,7 @@ class SignUpViewController: UIViewController {
         loginBtn.designButton(title: "Already have an account? Login", changeColorText: "Login")
         username.designTextField()
         password.designTextField()
+        password.isSecureTextEntry = true
     }
     @IBAction func signUpBtnHandler(_ sender: Any) {
         let data = ToDoModel(emailId: username.text ?? "", password: password.text ?? "")
@@ -33,7 +34,7 @@ class SignUpViewController: UIViewController {
             self.view.window?.rootViewController = navcontroller
             self.view.window?.makeKeyAndVisible()
         } else {
-            alertControllerManager.showAlert(on: self, title: "Invalid", message: signUpViewModel.message)
+            alertControllerManager.showAlert(on: self, title: "Invalid", message: signUpViewModel.message, disableCancel: true)
         }
     }
     

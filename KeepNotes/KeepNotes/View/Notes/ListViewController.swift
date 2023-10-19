@@ -38,9 +38,16 @@ class ListViewController: UIViewController {
         vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @IBAction func logOutBtn(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+        self.view.window?.rootViewController = vc
+        self.view.window?.makeKeyAndVisible()
+    }
+    
 }
 
-//MARK: - EXTENSION FOR TABLE
+//MARK: - EXTENSION FOR COLLECTION
 
 extension ListViewController: UICollectionViewDelegate {
     
@@ -96,7 +103,7 @@ extension ListViewController: UICollectionViewDelegateFlowLayout {
 
 //MARK: - Fetching data
 
-extension ListViewController: PassListDataDelegate {    
+extension ListViewController: PassListDataDelegate {
     func passData(_ Info: Task) {
         listViewModel.didAddTask(Info)
         listCollectionView.isHidden = false
