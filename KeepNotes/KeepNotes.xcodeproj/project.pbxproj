@@ -22,6 +22,8 @@
 		8308F8DC2ADAB9E100C246CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8308F8DB2ADAB9E100C246CA /* Assets.xcassets */; };
 		8308F8E02ADAB9F400C246CA /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8308F8DE2ADAB9F400C246CA /* TaskModel.swift */; };
 		8308F8E12ADAB9F400C246CA /* ToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8308F8DF2ADAB9F400C246CA /* ToDoModel.swift */; };
+		830F203D2AE10DED00DCC7B3 /* TDHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830F203B2AE10DED00DCC7B3 /* TDHelper.swift */; };
+		830F203E2AE10DED00DCC7B3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830F203C2AE10DED00DCC7B3 /* Extension.swift */; };
 		83581E532ABED2B90048C4F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83581E522ABED2B90048C4F7 /* AppDelegate.swift */; };
 		83581E552ABED2B90048C4F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83581E542ABED2B90048C4F7 /* SceneDelegate.swift */; };
 		83581E8C2ABEF98F0048C4F7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83581E7D2ABEF98F0048C4F7 /* SignUpViewController.swift */; };
@@ -47,6 +49,8 @@
 		8308F8DB2ADAB9E100C246CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8308F8DE2ADAB9F400C246CA /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		8308F8DF2ADAB9F400C246CA /* ToDoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoModel.swift; sourceTree = "<group>"; };
+		830F203B2AE10DED00DCC7B3 /* TDHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TDHelper.swift; sourceTree = "<group>"; };
+		830F203C2AE10DED00DCC7B3 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		83581E4F2ABED2B90048C4F7 /* KeepNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeepNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83581E522ABED2B90048C4F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83581E542ABED2B90048C4F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +111,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		830F203A2AE10DED00DCC7B3 /* HelpingFile */ = {
+			isa = PBXGroup;
+			children = (
+				830F203B2AE10DED00DCC7B3 /* TDHelper.swift */,
+				830F203C2AE10DED00DCC7B3 /* Extension.swift */,
+			);
+			path = HelpingFile;
+			sourceTree = "<group>";
+		};
 		83581E462ABED2B90048C4F7 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +143,7 @@
 				8308F8C92ADAB96400C246CA /* ViewModel */,
 				83581E7B2ABEF98F0048C4F7 /* View */,
 				8308F8D22ADAB98200C246CA /* Manager */,
+				830F203A2AE10DED00DCC7B3 /* HelpingFile */,
 				83581E522ABED2B90048C4F7 /* AppDelegate.swift */,
 				83581E542ABED2B90048C4F7 /* SceneDelegate.swift */,
 				8308F8D82ADAB9B200C246CA /* LaunchScreen.storyboard */,
@@ -265,8 +279,10 @@
 				83581E8C2ABEF98F0048C4F7 /* SignUpViewController.swift in Sources */,
 				83581E552ABED2B90048C4F7 /* SceneDelegate.swift in Sources */,
 				83581E942ABEF98F0048C4F7 /* SectionTableView.swift in Sources */,
+				830F203E2AE10DED00DCC7B3 /* Extension.swift in Sources */,
 				8308F8D52ADAB98200C246CA /* UserDefaultsManager.swift in Sources */,
 				8308F8E12ADAB9F400C246CA /* ToDoModel.swift in Sources */,
+				830F203D2AE10DED00DCC7B3 /* TDHelper.swift in Sources */,
 				8308F8C22ADAB92400C246CA /* AddTaskViewController.swift in Sources */,
 				8308F8D12ADAB96400C246CA /* ListViewModel.swift in Sources */,
 			);
