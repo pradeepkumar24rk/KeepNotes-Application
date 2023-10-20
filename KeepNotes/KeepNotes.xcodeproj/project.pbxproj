@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6517C2B41F0D4F52D95868E7 /* Pods_KeepNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0447C91061012DB9551464F1 /* Pods_KeepNotes.framework */; };
 		8308F8BE2ADAB8FE00C246CA /* Cell1CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8308F8BC2ADAB8FE00C246CA /* Cell1CollectionViewCell.xib */; };
 		8308F8BF2ADAB8FE00C246CA /* Cell1CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8308F8BD2ADAB8FE00C246CA /* Cell1CollectionViewCell.swift */; };
 		8308F8C22ADAB92400C246CA /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8308F8C02ADAB92400C246CA /* AddTaskViewController.swift */; };
@@ -31,9 +32,13 @@
 		83581E942ABEF98F0048C4F7 /* SectionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83581E882ABEF98F0048C4F7 /* SectionTableView.swift */; };
 		83581E952ABEF98F0048C4F7 /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83581E892ABEF98F0048C4F7 /* HeaderCollectionReusableView.xib */; };
 		83581E962ABEF98F0048C4F7 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83581E8A2ABEF98F0048C4F7 /* HeaderCollectionReusableView.swift */; };
+		83B158F12AE29FC7001AC82F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B158F02AE29FC7001AC82F /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0447C91061012DB9551464F1 /* Pods_KeepNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeepNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		08CC28B0BCC6833A64C4FD4D /* Pods-KeepNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeepNotes.debug.xcconfig"; path = "Target Support Files/Pods-KeepNotes/Pods-KeepNotes.debug.xcconfig"; sourceTree = "<group>"; };
+		167BBCFC3DA5AFAB6117B020 /* Pods-KeepNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeepNotes.release.xcconfig"; path = "Target Support Files/Pods-KeepNotes/Pods-KeepNotes.release.xcconfig"; sourceTree = "<group>"; };
 		8308F8BC2ADAB8FE00C246CA /* Cell1CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell1CollectionViewCell.xib; sourceTree = "<group>"; };
 		8308F8BD2ADAB8FE00C246CA /* Cell1CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell1CollectionViewCell.swift; sourceTree = "<group>"; };
 		8308F8C02ADAB92400C246CA /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +65,7 @@
 		83581E882ABEF98F0048C4F7 /* SectionTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTableView.swift; sourceTree = "<group>"; };
 		83581E892ABEF98F0048C4F7 /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		83581E8A2ABEF98F0048C4F7 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		83B158F02AE29FC7001AC82F /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,12 +73,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6517C2B41F0D4F52D95868E7 /* Pods_KeepNotes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		027FD983EC3534ED9FFE6306 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				08CC28B0BCC6833A64C4FD4D /* Pods-KeepNotes.debug.xcconfig */,
+				167BBCFC3DA5AFAB6117B020 /* Pods-KeepNotes.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8308F8BB2ADAB8FE00C246CA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				8308F8D32ADAB98200C246CA /* UserDefaultsManager.swift */,
+				83B158F02AE29FC7001AC82F /* NetworkManager.swift */,
 				8308F8D42ADAB98200C246CA /* AlertControllerManager.swift */,
 			);
 			path = Manager;
@@ -125,6 +142,8 @@
 			children = (
 				83581E512ABED2B90048C4F7 /* KeepNotes */,
 				83581E502ABED2B90048C4F7 /* Products */,
+				027FD983EC3534ED9FFE6306 /* Pods */,
+				929CDEC7E2E9D0A1C95011AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,8 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				8308F8DD2ADAB9F400C246CA /* Model */,
-				8308F8C92ADAB96400C246CA /* ViewModel */,
 				83581E7B2ABEF98F0048C4F7 /* View */,
+				8308F8C92ADAB96400C246CA /* ViewModel */,
 				8308F8D22ADAB98200C246CA /* Manager */,
 				830F203A2AE10DED00DCC7B3 /* HelpingFile */,
 				83581E522ABED2B90048C4F7 /* AppDelegate.swift */,
@@ -193,6 +212,14 @@
 			path = Section;
 			sourceTree = "<group>";
 		};
+		929CDEC7E2E9D0A1C95011AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0447C91061012DB9551464F1 /* Pods_KeepNotes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -200,9 +227,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83581E632ABED2BD0048C4F7 /* Build configuration list for PBXNativeTarget "KeepNotes" */;
 			buildPhases = (
+				73CF294C8D510AE2152D00F4 /* [CP] Check Pods Manifest.lock */,
 				83581E4B2ABED2B90048C4F7 /* Sources */,
 				83581E4C2ABED2B90048C4F7 /* Frameworks */,
 				83581E4D2ABED2B90048C4F7 /* Resources */,
+				6D7D019D9F23543B80F1CAB2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -261,6 +290,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6D7D019D9F23543B80F1CAB2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KeepNotes/Pods-KeepNotes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KeepNotes/Pods-KeepNotes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeepNotes/Pods-KeepNotes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73CF294C8D510AE2152D00F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KeepNotes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		83581E4B2ABED2B90048C4F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -278,6 +349,7 @@
 				8308F8D62ADAB98200C246CA /* AlertControllerManager.swift in Sources */,
 				83581E8C2ABEF98F0048C4F7 /* SignUpViewController.swift in Sources */,
 				83581E552ABED2B90048C4F7 /* SceneDelegate.swift in Sources */,
+				83B158F12AE29FC7001AC82F /* NetworkManager.swift in Sources */,
 				83581E942ABEF98F0048C4F7 /* SectionTableView.swift in Sources */,
 				830F203E2AE10DED00DCC7B3 /* Extension.swift in Sources */,
 				8308F8D52ADAB98200C246CA /* UserDefaultsManager.swift in Sources */,
@@ -407,6 +479,7 @@
 		};
 		83581E642ABED2BD0048C4F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08CC28B0BCC6833A64C4FD4D /* Pods-KeepNotes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -434,6 +507,7 @@
 		};
 		83581E652ABED2BD0048C4F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 167BBCFC3DA5AFAB6117B020 /* Pods-KeepNotes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

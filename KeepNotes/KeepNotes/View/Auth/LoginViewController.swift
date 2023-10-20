@@ -1,8 +1,8 @@
 //
 //  LoginViewController.swift
-//  weeklyassessment
+//  Week4Assessment
 //
-//  Created by PraDeePKuMaR RaJaRaM on 13/09/23.
+//  Created by PraDeePKuMaR RaJaRaM on 13/10/23.
 //
 
 import UIKit
@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     
     let loginViewModel = LoginViewModel()
     let alertControllerManager = AlertControllerManger.shared
+    var activityIndicator = UIActivityIndicatorView(style: .large)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,16 +24,31 @@ class LoginViewController: UIViewController {
         signUpBtn.designButton(title: "Don’t have an account? Sign Up", changeColorText: "Sign Up")
         username.designTextField()
         password.designTextField()
+        password.isSecureTextEntry = true
+        activityIndicator.center = view.center
+        view.addSubview(activityIndicator)
     }
     @IBAction func loginBtnHandler(_ sender: Any) {
-        if loginViewModel.FindingUser(emailId: username.text ?? "", password: password.text ?? "") {
-          guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListViewController") as? ListViewController else { return }
-            vc.indexOfUser = loginViewModel.userIndex
-            let navcontroller = UINavigationController(rootViewController: vc)
-            self.view.window?.rootViewController = navcontroller
-            self.view.window?.makeKeyAndVisible()
+        guard let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListViewController") as? ListViewController else { return }
+        activityIndicator.startAnimating()
+        loginBtn.isEnabled = false
+        if loginViewModel.loginValidation(emailId: username.text ?? "", password: password.text ?? "") {
+            loginViewModel.loginAPIRequest(email: username.text ?? "", password: password.text ?? "") { success in
+                self.activityIndicator.stopAnimating()
+                if success {
+                    let navcontroller = UINavigationController(rootViewController: vc)
+                    self.view.window?.rootViewController = navcontroller
+                    self.view.window?.makeKeyAndVisible()
+                } else {
+                    self.activityIndicator.stopAnimating()
+                    self.loginBtn.isEnabled = true
+                    self.alertControllerManager.showAlert(on: self, title: "Information", message: self.loginViewModel.message)
+                }
+            }
         } else {
-            alertControllerManager.showAlert(on: self, title: "Information", message: loginViewModel.message)
+            loginBtn.isEnabled = true
+            self.activityIndicator.stopAnimating()
+            self.alertControllerManager.showAlert(on: self, title: "Information", message: loginViewModel.message)
         }
     }
     

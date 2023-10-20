@@ -14,27 +14,32 @@ class UserDefaultsManager {
     
     private init() {}
     
-    func setUserDict(_ newValue: [String: [ToDoModel]]) {
-        UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey: userDataKey)
-    }
-    
-    func getUserDict() -> [String: [ToDoModel]] {
-        if let data = UserDefaults.standard.value(forKey: userDataKey) as? Data,
-           let decodedValue = try? PropertyListDecoder().decode([String: [ToDoModel]].self, from: data) {
-            return decodedValue
+    func getValue(key: String) -> String {
+        if let val =  UserDefaults.standard.value(forKey: key) as? String {
+            return val
         }
-        return ["": [ToDoModel]()]
+        return ""
     }
     
-    var users: [ToDoModel] {
+    func setValue(key: String, val: String) {
+        UserDefaults.standard.set(val, forKey: key)
+    }
+    
+    var username: String {
         get {
-            if let users = getUserDict()["users"] {
-                return users
-            }
-            return []
+            getValue(key: "username")
         }
         set {
-            setUserDict(["users":newValue])
+            setValue(key: "username", val: newValue)
+        }
+    }
+    
+    var password: String {
+        get {
+            getValue(key: "password")
+        }
+        set {
+            setValue(key: "password", val: newValue)
         }
     }
 }

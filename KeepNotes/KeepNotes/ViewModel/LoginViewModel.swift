@@ -8,28 +8,11 @@
 import Foundation
 
 class LoginViewModel {
+    var networkManager = NetworkManager.shared
     var userDefaults = UserDefaultsManager.shared
+    
     var message = String()
     var userIndex = Int()
-    
-    func FindingUser(emailId: String, password: String) -> Bool {
-        if loginValidation(emailId: emailId, password: password) {
-            if let index = userDefaults.users.firstIndex(where: { data in
-                data.emailId == emailId
-            }){
-                if !(userDefaults.users[index].password == password) {
-                    message = "Password is wrong."
-                    return false
-                }
-                userIndex = index
-                return true
-            } else {
-                message = "No user found "
-                return false
-            }
-        }
-        return false
-    }
     
     func loginValidation(emailId: String, password: String) -> Bool {
         if !isRequiredFieldFilled(emailId: emailId, password: password) {
@@ -56,6 +39,35 @@ class LoginViewModel {
             return false
         }
         return true
+    }
+    
+    func loginAPIRequest(email: String, password: String, completionHandler: @escaping (Bool) -> Void) {
+        networkManager.loginAPI(email: email, password: password) { result, statusBool  in
+            do {
+                switch result {
+                    case .success(let data):
+                        if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                            print(json)
+                            if statusBool {
+                                self.userDefaults.username = email
+                                self.userDefaults.password = password
+                            } else {
+                                guard let jsonValue = json["error"] as? String else { return }
+                                self.message = jsonValue
+                            }
+                        }
+                        completionHandler(statusBool)
+                    case .failure(let error):
+                        print(error)
+                        self.message = "Server Down Or something went wrong\n Please try later"
+                        completionHandler(statusBool)
+                }
+            } catch {
+                print("Error in json: \(error)")
+                self.message = "Server Down Or something went wrong\n Please try later"
+                completionHandler(false)
+            }
+        }
     }
 }
 

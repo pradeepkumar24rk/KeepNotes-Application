@@ -1,8 +1,8 @@
 //
-//  SectionTableViewHeader.swift
+//  HeaderCollectionReusableView.swift
 //  Week4Assessment
 //
-//  Created by PraDeePKuMaR RaJaRaM on 20/09/23.
+//  Created by PraDeePKuMaR RaJaRaM on 27/09/23.
 //
 
 import UIKit
@@ -19,7 +19,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     }
      
     static func nib() -> UINib {
-        return UINib(nibName: "HeaderCollectionReusableView", bundle: nil) //nib file name is xib file name
+        return UINib(nibName: "HeaderCollectionReusableView", bundle: nil)
     }
     
     public func configure(with heading: String) {

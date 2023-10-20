@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-// This file for store all the extension which use all place
+
 extension UIView {
     func designView() {
         self.layer.borderColor = UIColor(red: 0.64, green: 0.38, blue: 0.91, alpha: 1).cgColor

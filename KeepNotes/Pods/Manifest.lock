@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (4.9.1)
+  - IQKeyboardManagerSwift (6.3.0)
+  - ObjectMapper (4.2.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - IQKeyboardManagerSwift (= 6.3.0)
+  - ObjectMapper (~> 4.2)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - IQKeyboardManagerSwift
+    - ObjectMapper
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
+  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+
+PODFILE CHECKSUM: 791cd844b745c9ff3c66c34051967c11b18bf457
+
+COCOAPODS: 1.13.0

@@ -11,9 +11,10 @@ class ListViewController: UIViewController {
     
     @IBOutlet weak var taskCount: UILabel!
     @IBOutlet weak var listCollectionView: UICollectionView!
+    let activityIndicator = UIActivityIndicatorView(style: .large)
     
     var listViewModel = ListViewModel()
-    var indexOfUser:Int = -1           // getting the user index value for the auth view controller
+    let alertControllerManager = AlertControllerManger.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,14 +24,27 @@ class ListViewController: UIViewController {
         listCollectionView.collectionViewLayout = layout
         listCollectionView.register(UINib(nibName: "Cell1CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell1")
         listCollectionView.register(HeaderCollectionReusableView.nib(), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderCollectionReusableView")
-        listViewModel.userIndex = indexOfUser    // assign user of the index to viewModel object
         listCollectionView.delegate = self
         listCollectionView.dataSource = self
         if listViewModel.totalTaskCount() == 0 {
-            listCollectionView.isHidden = true       // hidding the table initally
+            listCollectionView.isHidden = true
         }
         taskCount.text = "Tasks: \(listViewModel.totalTaskCount())"
-        self.navigationItem.hidesBackButton = true
+        activityIndicator.center = view.center
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        listViewModel.listAPIRequest { isSuccess in
+            self.activityIndicator.stopAnimating()
+            if !isSuccess {
+                self.alertControllerManager.showAlert(on: self, title: "Information", message: self.listViewModel.message)
+            } else {
+                self.listCollectionView.reloadData()
+                if self.listViewModel.totalTaskCount() > 0 {
+                    self.taskCount.text = "Task: \(self.listViewModel.totalTaskCount())"
+                    self.listCollectionView.isHidden = false
+                }
+            }
+        }
     }
     
     @IBAction func addTaskBtn(_ sender: Any) {
@@ -104,23 +118,39 @@ extension ListViewController: UICollectionViewDelegateFlowLayout {
 //MARK: - Fetching data
 
 extension ListViewController: PassListDataDelegate {
-    func passData(_ Info: Task) {
-        listViewModel.didAddTask(Info)
-        listCollectionView.isHidden = false
-        taskCount.text = "Task: \(listViewModel.totalTaskCount())"
-        listCollectionView.reloadData()
+    func passData(taskTitle: String,taskDesc: String) {
+        //        listViewModel.didAddTask(Info)
+        activityIndicator.startAnimating()
+        listViewModel.addListAPIRequest(parameters: ["name": taskTitle,"description":taskDesc]) { isSuccess in
+            self.activityIndicator.stopAnimating()
+            if isSuccess {
+                self.listCollectionView.isHidden = false
+                self.taskCount.text = "Task: \(self.listViewModel.totalTaskCount())"
+                self.listCollectionView.reloadData()
+            } else {
+                self.alertControllerManager.showAlert(on: self, title: "Information", message: self.listViewModel.message)
+            }
+        }
     }
 }
 
 extension ListViewController: UpdatedDataDelegate {
-    func updated(_ info: UICollectionViewCell ) {
-        let index = listCollectionView.indexPath(for: info)
-        if index?.section == 0 {
-            if let row = index?.row {
-                listViewModel.didUpdateTask(row)
-                taskCount.text = "Tasks: \(listViewModel.totalTaskCount())"
-                listCollectionView.reloadData()
+    func updated(_ info: Int ) {
+        activityIndicator.startAnimating()
+        listViewModel.completedListAPIRequest(id: info) { isSuccess in
+            self.activityIndicator.stopAnimating()
+            if isSuccess {
+                self.listViewModel.taskAssigned = self.listViewModel.taskAssigned.filter{ task in
+                    return task.id != info
+                }
+                self.taskCount.text = "Tasks: \(self.listViewModel.totalTaskCount())"
+                self.listCollectionView.reloadData()
+            } else {
+                self.alertControllerManager.showAlert(on: self, title: "Information", message: self.listViewModel.message)
             }
         }
+        
+        
+        
     }
 }

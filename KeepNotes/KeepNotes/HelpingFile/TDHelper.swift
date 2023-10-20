@@ -6,7 +6,7 @@
 //
 
 import Foundation
-// this file for validation and helpfile for todolist
+
 class TDHelper {
     static let shared = TDHelper()
     
@@ -23,28 +23,5 @@ class TDHelper {
         let hasLowerCase = password.rangeOfCharacter(from: .lowercaseLetters) != nil
         let hasSpecialCharacter = password.rangeOfCharacter(from: CharacterSet(charactersIn: "$!#%^&*?><+-_@")) != nil
         return password.count >= mininumCharater && hasUpperCase && hasLowerCase && hasSpecialCharacter
-    }
-    
-    func isValidName(check name: String) -> Bool {
-        let nameRegex = try! NSRegularExpression(pattern: "[a-zA-z]+")
-        let range = NSRange(location: 0, length: name.utf16.count)
-        return nameRegex.firstMatch(in: name, options: [], range: range) != nil
-    }
-    
-    func isValidPhoneNumber(check phoneNumber: String) -> Bool {
-        let Number = String(phoneNumber[phoneNumber.index(phoneNumber.startIndex, offsetBy: 1)...])
-        if Int(Number) != nil {
-                return true
-        }
-        return false
-    }
-    
-    func isValidPinCode(check pinCode: String) -> Bool {
-        if Int(pinCode) != nil {
-            if pinCode.count == 6 {
-                return true
-            }
-        }
-        return false
     }
 }

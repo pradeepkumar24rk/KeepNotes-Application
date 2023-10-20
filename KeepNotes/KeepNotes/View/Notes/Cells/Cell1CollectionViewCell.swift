@@ -8,7 +8,7 @@
 import UIKit
 
 protocol UpdatedDataDelegate{
-    func updated(_ info: UICollectionViewCell)
+    func updated(_ info: Int)
 }
 
 class Cell1CollectionViewCell: UICollectionViewCell {
@@ -18,6 +18,7 @@ class Cell1CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var check: UIImageView!
     
     var delegate: UpdatedDataDelegate?
+    var id = Int()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +29,7 @@ class Cell1CollectionViewCell: UICollectionViewCell {
     }
     
     @objc func imageViewTapped(_ sender: UITapGestureRecognizer) {
-        delegate?.updated(self)
+        delegate?.updated(self.id)
     }
 
     
@@ -36,5 +37,6 @@ class Cell1CollectionViewCell: UICollectionViewCell {
         taskTitle.text = data.Title
         taskDesc.text = data.Desc
         check.image = statusImage
+        id = data.id
     }
 }
